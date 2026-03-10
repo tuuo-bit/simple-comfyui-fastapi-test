@@ -2,13 +2,13 @@
 
 A basic, containerized implementaion to run ComfyUI alongside a FastAPI backend using Docker Compose.
 
-## 📁 Repository Structure
+## Repository Structure
 
 * **`comfyui/`** - Contains the Dockerfile and necessary scripts to build and run the ComfyUI container.
 * **`fastapi/`** - Contains the FastAPI application (`main.py`) and its Dockerfile. This acts as the custom backend/API.
 * **`docker-compose.yml`** - The orchestration file that links the `ui` (ComfyUI) and `api` (FastAPI) services together.
 
-## 📋 Prerequisites
+## Prerequisites
 
 To run this project, you need:
 1. **Docker & Docker Compose** installed on your machine.
@@ -16,7 +16,7 @@ To run this project, you need:
 3. **NVIDIA Container Toolkit**
 4. **Place your ComfyUI workflows and models in /fastapi/workflows and /comfyui/models/{type} directories respectively**
 
-## 🚀 Getting Started
+## Getting Started
 
 1. **Clone the repository:**
    ```
@@ -30,5 +30,5 @@ To run this project, you need:
     ```
 
 3. **Access the Web Interfaces:**
-    - ComfyUI:http://localhost:8188
+    - ComfyUI: http://localhost:8188
     - FastAPI Interactive (Swagger): http://localhost:5000/docs
