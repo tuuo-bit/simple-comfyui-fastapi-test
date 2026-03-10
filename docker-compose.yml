@@ -1,0 +1,25 @@
+services:
+  ui:
+    build: ./comfyui
+    container_name: comfyui_container
+    command: python ComfyUI/main.py --listen 0.0.0.0 --port 8188
+    ports:
+      - "8188:8188"
+    restart: unless-stopped
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+
+  api:
+    build: ./fastapi
+    container_name: fastapi_container
+    command: uvicorn main:app --host 0.0.0.0 --port 5000
+    ports:
+      - "5000:5000"
+    restart: unless-stopped
+    depends_on:
+      - ui
